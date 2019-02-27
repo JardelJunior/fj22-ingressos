@@ -19,7 +19,7 @@ public class OmdbClient {
 		
 		String titulo = filme.getNome().replace(" ", "+");
 
-		String url = String.format("http://omdb-fj22.herokuapp.com/movie?title=%s", titulo);
+		String url = String.format("https://omdb-fj22.herokuapp.com/movie?title=%s", titulo);
 
 		try {
 			DetalhesDoFilme detalhesDoFilme = client.getForObject(url, DetalhesDoFilme.class);
