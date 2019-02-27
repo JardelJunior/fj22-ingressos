@@ -1,6 +1,8 @@
 package br.com.caelum.ingresso.model;
 
 import java.time.LocalTime;
+import java.util.List;
+import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,6 +39,11 @@ public class Sessao {
 
 	}
 
+	
+	public Map<String, List<Lugar>> getMapaDeLugares(){
+		return sala.getMapaDeLugares();
+	}
+	
 	public LocalTime getHorario() {
 		return horario;
 	}

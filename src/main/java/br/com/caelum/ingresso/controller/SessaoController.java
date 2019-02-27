@@ -32,20 +32,21 @@ public class SessaoController {
 	@Transactional
 	public ModelAndView salva(@Valid SessaoForm form, BindingResult result) {
 		if (result.hasErrors())
-			return form(form.getSalaId(),form);
+			return form(form.getSalaId(), form);
 		Sessao sessao = form.toSessao(salaDao, filmeDao);
 		sessaoDao.save(sessao);
 		return new ModelAndView("redirect:/admin/sal/" + form.getSalaId() + "/sessoes");
 	}
+
 	@GetMapping("/admin/sessao")
 	public ModelAndView form(@RequestParam("salaId") Integer salaId, SessaoForm form) {
 
 		form.setSalaId(salaId);
 		ModelAndView modelAndView = new ModelAndView("sessao/sessao");
-		
+
 		modelAndView.addObject("sala", salaDao.findOne(salaId));
 		modelAndView.addObject("filme", filmeDao.findAll());
-		modelAndView.addObject("form",form);
+		modelAndView.addObject("form", form);
 		return modelAndView;
 
 	}
