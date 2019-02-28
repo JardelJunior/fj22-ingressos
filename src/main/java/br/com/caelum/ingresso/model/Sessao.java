@@ -1,5 +1,6 @@
 package br.com.caelum.ingresso.model;
 
+import java.math.BigDecimal;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Map;
@@ -66,6 +67,11 @@ public class Sessao {
 
 	public void setFilme(Filme filme) {
 		this.filme = filme;
+	}
+
+	public BigDecimal getPreco() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
