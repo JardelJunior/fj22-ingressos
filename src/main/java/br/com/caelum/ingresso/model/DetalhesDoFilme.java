@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DetalhesDoFilme {
 
+	
 	@JsonProperty("Title")
 	private String titulo;
 
